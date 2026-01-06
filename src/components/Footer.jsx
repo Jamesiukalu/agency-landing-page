@@ -7,6 +7,7 @@ import {
     IconButton,
 } from "@mui/material";
 import { motion } from "framer-motion";
+import { Link as RouterLink } from "react-router-dom";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -36,15 +37,15 @@ export default function Footer() {
                     {/* Brand */}
                     <Box>
                         <Typography variant="h6" fontWeight={700}>
-                            BizGrowthLab
+                            WebCraft Studio
                         </Typography>
                         <Typography
                             variant="body2"
                             color="text.secondary"
                             sx={{ maxWidth: 320, mt: 1 }}
                         >
-                            Helping B2B companies scale revenue through automation and
-                            operational excellence.
+                            Professional web development services for SMEs, startups, and growing businesses.
+                            Building digital solutions that drive growth.
                         </Typography>
 
                         {/* Socials */}
@@ -67,13 +68,13 @@ export default function Footer() {
                     {/* Company Links */}
                     <Stack spacing={1}>
                         <Typography fontWeight={600}>Company</Typography>
-                        <Link underline="none" color="inherit">
+                        <Link component={RouterLink} to="/about" underline="none" color="inherit">
                             About Us
                         </Link>
-                        <Link underline="none" color="inherit">
+                        <Link component={RouterLink} to="/services" underline="none" color="inherit">
                             Services
                         </Link>
-                        <Link underline="none" color="inherit">
+                        <Link component={RouterLink} to="/contact" underline="none" color="inherit">
                             Contact
                         </Link>
                     </Stack>
@@ -81,10 +82,10 @@ export default function Footer() {
                     {/* Legal */}
                     <Stack spacing={1}>
                         <Typography fontWeight={600}>Legal</Typography>
-                        <Link underline="none" color="inherit">
+                        <Link underline="none" color="inherit" href="#">
                             Privacy Policy
                         </Link>
-                        <Link underline="none" color="inherit">
+                        <Link underline="none" color="inherit" href="#">
                             Terms of Service
                         </Link>
                     </Stack>
@@ -95,7 +96,7 @@ export default function Footer() {
                     color="text.secondary"
                     sx={{ mt: 6, textAlign: "center" }}
                 >
-                    © {new Date().getFullYear()} RevOpsLab. All rights reserved.
+                    © {new Date().getFullYear()} WebCraft Studio. All rights reserved.
                 </Typography>
             </Container>
         </MotionBox>

@@ -1,28 +1,39 @@
 import { Container, Typography, Box, Button } from "@mui/material";
 import { motion } from "framer-motion";
+import { Link as RouterLink } from "react-router-dom";
 
 const MotionBox = motion(Box);
 
 const services = [
     {
-        title: "Revenue Operations (RevOps)",
+        title: "Business Websites",
         description:
-            "Align sales, marketing, and customer success with unified data, tooling, and processes to drive predictable revenue growth.",
+            "Professional, responsive websites designed to showcase your brand, engage visitors, and convert them into customers. Perfect for SMEs looking to establish their online presence.",
     },
     {
-        title: "Custom Web Applications",
+        title: "E-Commerce Stores",
         description:
-            "We design and build scalable, secure, and high-performance web applications tailored to your business needs.",
+            "Full-featured online stores with secure payment processing, inventory management, and seamless checkout experiences that drive sales and growth.",
     },
     {
-        title: "Process Automation",
+        title: "Web Applications",
         description:
-            "Automate repetitive workflows across CRM, finance, support, and operations to reduce cost and increase efficiency.",
+            "Custom web apps tailored to your unique business needs - from booking systems and dashboards to customer portals and management tools.",
     },
     {
-        title: "Enterprise Application Support",
+        title: "Portfolio Websites",
         description:
-            "Ongoing support, optimization, and integration for mission-critical enterprise systems and internal tools.",
+            "Stunning, creative portfolio sites for freelancers, artists, photographers, and professionals to showcase their work and attract clients.",
+    },
+    {
+        title: "Startup MVPs",
+        description:
+            "Launch your startup idea quickly with a minimum viable product. We help you validate your concept and get to market fast with a scalable foundation.",
+    },
+    {
+        title: "Website Maintenance",
+        description:
+            "Ongoing support, updates, security patches, and optimization to keep your website running smoothly and performing at its best.",
     },
 ];
 
@@ -39,8 +50,8 @@ export default function ServicesPage() {
                     color="text.secondary"
                     sx={{ maxWidth: 700, mx: "auto" }}
                 >
-                    End to end solutions that drive revenue, efficiency, and
-                    operational excellence.
+                    Comprehensive web solutions designed to help your business thrive in the digital world.
+                    From concept to launch and beyond.
                 </Typography>
             </Box>
 
@@ -60,20 +71,20 @@ export default function ServicesPage() {
                             minWidth: 0,
 
                             flexBasis: {
-                                xs: "50%",
+                                xs: "100%",
                                 sm: "50%",
-                                md: "25%",
+                                md: "33.333%",
                             },
                             width: {
-                                xs: "50%",
+                                xs: "100%",
                                 sm: "50%",
-                                md: "25%",
+                                md: "33.333%",
                             },
 
                             height: {
                                 xs: "50vh",
                                 sm: "50vh",
-                                md: "100vh",
+                                md: "60vh",
                             },
 
                             display: "flex",
@@ -86,14 +97,20 @@ export default function ServicesPage() {
                             background:
                                 "linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))",
                             border: "1px solid rgba(255,255,255,0.08)",
+                            
+                            "&:hover": {
+                                background: "linear-gradient(180deg, rgba(59,130,246,0.1), rgba(59,130,246,0.05))",
+                                borderColor: "rgba(59,130,246,0.3)",
+                                transition: "all 0.3s ease",
+                            }
                         }}
                     >
 
-                        <Typography variant="h6" fontWeight={600} gutterBottom>
+                        <Typography variant="h5" fontWeight={600} gutterBottom>
                             {service.title}
                         </Typography>
 
-                        <Typography variant="body2" color="text.secondary">
+                        <Typography variant="body2" color="text.secondary" sx={{ maxWidth: 400 }}>
                             {service.description}
                         </Typography>
                     </MotionBox>
@@ -101,9 +118,20 @@ export default function ServicesPage() {
             </Box>
 
             {/* CTA */}
-            <Box sx={{ textAlign: "center", py: 6 }}>
-                <Button variant="contained" size="large">
-                    Request a Free Audit
+            <Box sx={{ textAlign: "center", py: 8, px: 4 }}>
+                <Typography variant="h4" fontWeight={600} gutterBottom>
+                    Ready to Get Started?
+                </Typography>
+                <Typography variant="body1" color="text.secondary" sx={{ mb: 4, maxWidth: 600, mx: 'auto' }}>
+                    Let's discuss your project and create a custom solution that fits your needs and budget.
+                </Typography>
+                <Button 
+                    variant="contained" 
+                    size="large"
+                    component={RouterLink}
+                    to="/contact"
+                >
+                    Get Free Consultation
                 </Button>
             </Box>
         </Box>

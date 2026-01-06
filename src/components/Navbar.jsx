@@ -55,7 +55,7 @@ export default function Navbar() {
                             to="/"
                             sx={{ textDecoration: "none", color: "inherit" }}
                         >
-                            BizGrowthLab
+                            WebCraft Studio
                         </Typography>
 
                         {/* Desktop Nav */}
@@ -88,8 +88,13 @@ export default function Navbar() {
                                 );
                             })}
 
-                            <Button variant="contained" size="small">
-                                Free Audit
+                            <Button 
+                                variant="contained" 
+                                size="small"
+                                component={RouterLink}
+                                to="/contact"
+                            >
+                                Get Quote
                             </Button>
                         </Stack>
 
@@ -109,7 +114,7 @@ export default function Navbar() {
             <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
                 <Box sx={{ width: 260, p: 2 }}>
                     <Typography variant="h6" fontWeight={700} sx={{ mb: 2 }}>
-                        BizGrowthLab
+                        WebCraft Studio
                     </Typography>
 
                     <List>
@@ -131,9 +136,11 @@ export default function Navbar() {
                         variant="contained"
                         fullWidth
                         sx={{ mt: 2 }}
+                        component={RouterLink}
+                        to="/contact"
                         onClick={() => setOpen(false)}
                     >
-                        Free Audit
+                        Get Quote
                     </Button>
                 </Box>
             </Drawer>
